@@ -16,6 +16,9 @@ to Plain-Old Python Objects.
 Why do that? Here is a good article from Snapchat to understand why:
 https://eng.snap.com/en-US/monolith-to-multicloud-microservices-snap-service-mesh
 
+You will see couple of libraries sprinkled here and there.
+That is to showcase what may you need in order to build this.
+
 ## How to Test?
 
 Just do this to register 
@@ -56,7 +59,13 @@ and run it like:
 docker run -e "DEBUG=FALSE" -e "ALLOWED_ENV_URL=127.0.0.1" -p 8000:8000 order_mgmt:demo
 ```
 
-```
+#### But You have left password in plain text? This isn't there, that isn't there, this is missing, 
+Yes, See what this repo is about in the above description.
+
+#### But but but!
+I charge for these services. I am not a charity.
+
+
 ### TODO:
 - [x] Create Tokens
 - [x] Create Users
