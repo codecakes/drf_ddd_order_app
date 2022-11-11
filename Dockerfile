@@ -21,4 +21,7 @@ RUN poetry install
 RUN DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE poetry run python -m order_app.infrastructure.manage makemigrations
 RUN DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE poetry run python -m order_app.infrastructure.manage migrate
 
+# collect static files
+RUN DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE poetry run python -m order_app.infrastructure.manage collectstatic
+
 CMD poetry run gunicorn order_app.infrastructure.order_mgmt.wsgi:application
