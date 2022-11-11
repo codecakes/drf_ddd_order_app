@@ -51,8 +51,8 @@ class UserLoginViewSet(viewsets.ViewSet):
         try:
             token: JWT_TOKEN = UserMgmtAppService.start_session(
                 bootstrap.start_bootstrap.uow,
-                username=data["username"],
-                password=data["password"],
+                username=data.get("username"),
+                password=data.get("password"),
             )
             return Response({"jwt": token.decode("utf-8")})
         except (ValueError, UserModel.DoesNotExist) as e:
