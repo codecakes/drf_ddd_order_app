@@ -9,10 +9,9 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-import os
-import sys
-from pathlib import Path
 import mimetypes
+import os
+from pathlib import Path
 
 mimetypes.add_type("text/css", ".css", True)
 
