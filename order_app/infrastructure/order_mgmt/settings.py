@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+import os
 import sys
 from pathlib import Path
 import mimetypes
@@ -28,7 +29,7 @@ SECRET_KEY = "django-insecure-228bs@uu*5q(j59fl12r-lvp(r1e@)j60@88j%kwh3-uen-v*i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [os.getenv("ALLOWED_ENV_URL", "localhost")]
 
 
 # Application definition
