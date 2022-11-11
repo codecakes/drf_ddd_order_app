@@ -47,7 +47,7 @@ Then you can use it to create an order.
 Which is the motivation for this app.
 But it is not done yet.
 
-How to Run locally?
+## How to Run locally?
 Build it like:
 
 ```bash
@@ -58,6 +58,7 @@ and run it like:
 ```bash
 docker run -e "DEBUG=FALSE" -e "ALLOWED_ENV_URL=127.0.0.1" -p 8000:8000 order_mgmt:demo
 ```
+<br />
 
 #### But You have left password in plain text? This isn't there, that isn't there, this is missing, 
 Yes, See what this repo is about in the above description.
