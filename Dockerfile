@@ -13,7 +13,12 @@ COPY *.toml /app/
 COPY poetry.lock /app
 
 ENV PYTHONPATH /app
+ENV DJANGO_SETTINGS_MODULE order_app.infrastructure.order_mgmt.settings
 RUN export PYTHONPATH=$PYTHONPATH:/app/order_app
 RUN poetry install
+
+# make migrations
+RUN DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE poetry run python -m order_app.infrastructure.manage makemigrations
+RUN DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE poetry run python -m order_app.infrastructure.manage migrate
 
 CMD poetry run gunicorn order_app.infrastructure.order_mgmt.wsgi:application
